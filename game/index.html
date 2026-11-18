@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solmar Bay — Open World</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./style.css">
+<script type="importmap">
+{ "imports": { "three": "./vendor/three.module.min.js" } }
+</script>
+</head>
+<body>
+<div id="app">
+  <canvas id="scene"></canvas>
+  <div id="hud" class="hidden">
+    <div id="top-left">
+      <div id="health-wrap"><span id="health-label">HEALTH</span><div id="health-bar"><div id="health-fill"></div></div></div>
+      <div id="money">$<span id="money-val">250</span></div>
+      <div id="wanted"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+    </div>
+    <div id="top-right">
+      <canvas id="minimap" width="180" height="180"></canvas>
+      <div id="clock">SOLMAR BAY · 18:42</div>
+    </div>
+    <div id="objective"><span id="objective-label">OBJECTIVE</span><span id="objective-text">Meet Rico at the Marina — drive or walk to the yellow marker.</span></div>
+    <div id="speedo" class="hidden"><span id="speed-val">0</span><span id="speed-unit">MPH</span><span id="car-name">Comet</span></div>
+    <div id="toast"></div>
+    <div id="hint">E — enter car &nbsp;·&nbsp; 1 — pistol, click — shoot &nbsp;·&nbsp; F — punch &nbsp;·&nbsp; T — taxi &nbsp;·&nbsp; C — checkpoints &nbsp;·&nbsp; M — mute</div>
+  </div>
+  <div id="start-screen">
+    <div class="panel">
+      <h1>SOLMAR<span>BAY</span></h1>
+      <p class="tagline">Sun. Salt. Stolen cars. A coastal city that never sleeps — and never forgets a debt.</p>
+      <p class="story">You are <b>Mara Voss</b>, a wheelwoman fresh out of the Marina lockup. Your old crew
+      owes you $40,000 — and Rico Delgado, the fixer who set you up, is waiting at the docks.
+      Run his jobs — getaways, drops, losing the heat, and a showdown with Vance Kroll —
+      or earn cash on the side with taxi fares and checkpoint runs.</p>
+      <div class="controls">
+        <div><b>W A S D</b> move / drive</div><div><b>Mouse drag</b> look around</div>
+        <div><b>Shift</b> run</div><div><b>Space</b> jump / handbrake</div>
+        <div><b>E</b> enter / exit car</div><div><b>P / Esc</b> pause</div>
+        <div><b>1</b> draw pistol &nbsp;·&nbsp; <b>click</b> shoot</div><div><b>F</b> punch / headlights</div>
+        <div><b>T</b> taxi fare</div><div><b>C</b> checkpoint run</div>
+        <div><b>M</b> mute</div>
+      </div>
+      <button id="start-btn">▶ &nbsp;CLICK TO START</button>
+      <p class="fine">An original game. Solmar Bay, Mara Voss and every car, street and story here are invented — nothing is taken from any commercial game.</p>
+    </div>
+  </div>
+  <div id="pause-screen" class="hidden">
+    <div class="panel"><h2>PAUSED</h2>
+      <p>Solmar Bay waits for no one. Except now.</p>
+      <button id="resume-btn">RESUME</button>
+      <button id="restart-btn" class="ghost">RESTART</button>
+      <button id="quit-btn" class="ghost">SAVE &amp; QUIT TO TITLE</button>
+    </div>
+  </div>
+  <div id="gameover-screen" class="hidden">
+    <div class="panel"><h2>BUSTED / FLATLINED</h2>
+      <p id="gameover-text">The Bay took you down. Mara dusts herself off and starts again.</p>
+      <button id="retry-btn">TRY AGAIN</button>
+    </div>
+  </div>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

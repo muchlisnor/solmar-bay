@@ -1,0 +1,41 @@
+/* Solmar Bay — HUD and menu styling. Warm sunset palette, no external fonts. */
+html, body { margin: 0; height: 100%; overflow: hidden; background: #1a120c; font-family: "Segoe UI", Verdana, sans-serif; }
+#app { position: fixed; inset: 0; }
+#scene { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+.hidden { display: none !important; }
+#hud { position: absolute; inset: 0; pointer-events: none; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.8); }
+#top-left { position: absolute; top: 14px; left: 16px; }
+#health-wrap { display: flex; align-items: center; gap: 8px; }
+#health-label { font-size: 11px; letter-spacing: 2px; font-weight: 700; }
+#health-bar { width: 180px; height: 12px; background: rgba(0,0,0,.55); border: 1px solid rgba(255,255,255,.5); border-radius: 6px; overflow: hidden; }
+#health-fill { height: 100%; width: 100%; background: linear-gradient(90deg, #2ecc71, #a8e063); transition: width .25s; }
+#health-fill.low { background: linear-gradient(90deg, #e74c3c, #f39c12); }
+#money { margin-top: 6px; font-size: 26px; font-weight: 800; color: #7dff9b; }
+#wanted { margin-top: 4px; font-size: 24px; letter-spacing: 4px; }
+#wanted .star { color: rgba(255,255,255,.22); }
+#wanted .star.lit { color: #ffd23e; text-shadow: 0 0 10px #ff9d00; }
+#top-right { position: absolute; top: 14px; right: 16px; text-align: right; }
+#minimap { border: 2px solid rgba(255,255,255,.65); border-radius: 50%; background: #0e1a24; box-shadow: 0 2px 12px rgba(0,0,0,.6); }
+#clock { margin-top: 6px; font-size: 12px; letter-spacing: 2px; font-weight: 700; }
+#objective { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); max-width: 520px; background: rgba(10,10,20,.55); border-left: 4px solid #ffd23e; padding: 8px 14px; border-radius: 4px; font-size: 14px; }
+#objective-label { color: #ffd23e; font-weight: 800; letter-spacing: 2px; font-size: 11px; margin-right: 8px; }
+#speedo { position: absolute; right: 22px; bottom: 26px; text-align: right; }
+#speed-val { font-size: 52px; font-weight: 800; line-height: 1; }
+#speed-unit { font-size: 14px; margin-left: 6px; letter-spacing: 2px; }
+#car-name { display: block; font-size: 13px; color: #ffd23e; letter-spacing: 1px; }
+#toast { position: absolute; bottom: 110px; left: 50%; transform: translateX(-50%); font-size: 18px; font-weight: 700; background: rgba(0,0,0,.55); padding: 8px 18px; border-radius: 20px; opacity: 0; transition: opacity .3s; white-space: nowrap; }
+#toast.show { opacity: 1; }
+#hint { position: absolute; bottom: 14px; left: 16px; font-size: 12px; opacity: .85; }
+#start-screen, #pause-screen, #gameover-screen { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: linear-gradient(160deg, rgba(20,8,20,.55), rgba(255,120,40,.25)); }
+.panel { background: rgba(12,10,24,.88); border: 1px solid rgba(255,210,62,.5); border-radius: 14px; padding: 30px 38px; max-width: 560px; text-align: center; color: #fff; box-shadow: 0 10px 50px rgba(0,0,0,.6); }
+.panel h1 { font-size: 56px; margin: 0; letter-spacing: 6px; color: #ffd23e; }
+.panel h1 span { color: #ff7a3d; }
+.panel h2 { font-size: 34px; margin: 0 0 10px; letter-spacing: 4px; color: #ffd23e; }
+.tagline { font-style: italic; color: #ffb37a; margin: 6px 0 14px; }
+.story { font-size: 15px; line-height: 1.55; color: #e8e8f0; }
+.controls { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 18px; text-align: left; font-size: 13px; margin: 18px 0; color: #cfd2e0; }
+.controls b { color: #ffd23e; }
+button { pointer-events: auto; cursor: pointer; background: linear-gradient(180deg, #ffb52e, #ff7a1a); border: none; color: #221100; font-size: 18px; font-weight: 800; letter-spacing: 2px; padding: 13px 30px; border-radius: 8px; margin-top: 8px; }
+button:hover { filter: brightness(1.12); }
+button.ghost { background: transparent; color: #ffd23e; border: 1px solid #ffd23e; font-size: 14px; padding: 9px 20px; margin-left: 8px; }
+.fine { font-size: 11px; color: #9a9aad; margin-top: 16px; }
